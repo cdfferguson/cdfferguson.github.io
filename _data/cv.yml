@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# CV content.  The /cv/ page is rendered from this file, so this is the only
+# place you need to edit.  Delete any section you don't want and it vanishes
+# from the page.
+# ---------------------------------------------------------------------------
+
+summary: >-
+  A two-sentence professional summary: what you do, the kind of problems you
+  work on, and what you're looking for next.
+
+# Optional: drop a PDF in assets/ and point at it to show a download button.
+# pdf: /assets/chris-ferguson-cv.pdf
+
+experience:
+  - role: Job Title
+    org: Organisation Name
+    location: City, Country
+    url: https://example.com
+    dates: 2022 — Present
+    notes:
+      - What you were responsible for, stated plainly.
+      - An accomplishment with a concrete outcome attached to it.
+      - A third point, if there's a third point worth making.
+
+  - role: Previous Job Title
+    org: Previous Organisation
+    location: City, Country
+    dates: 2019 — 2022
+    notes:
+      - What the role involved.
+      - Something you shipped, changed, or improved.
+
+education:
+  - qualification: Degree, Subject
+    institution: University Name
+    location: City, Country
+    dates: 2015 — 2019
+    notes:
+      - Thesis, honours, or anything else worth a line.
+
+skills:
+  - name: Group one
+    items: [Thing, Another thing, A third thing]
+  - name: Group two
+    items: [Thing, Another thing]
+  - name: Group three
+    items: [Thing, Another thing]
+  - name: Group four
+    items: [Thing, Another thing]
+
+projects:
+  - name: Project name
+    url: https://example.com
+    dates: 2024
+    description: One sentence on what it is and why it mattered.
+
+# Free-form sections — add as many as you like, each becomes its own block.
+# extras:
+#   - name: Speaking
+#     items:
+#       - "Talk title — Conference, 2025"
+#   - name: Certifications
+#     items:
+#       - "Certification name, issuing body, 2024"

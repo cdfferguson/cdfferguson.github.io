@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <nav class="site-nav" aria-label="Main">
+      {%- assign nav_items = "/,Home|/about/,About|/cv/,CV|/blog/,Blog" | split: "|" -%}
+      {%- for item in nav_items -%}
+        {%- assign parts = item | split: "," -%}
+        {%- assign href = parts[0] -%}
+        <a href="{{ href | relative_url }}"
+           {% if page.url == href %}aria-current="page"{% endif %}>{{ parts[1] }}</a>
+      {%- endfor -%}
+
+      <button class="theme-toggle" type="button" id="theme-toggle"
+              aria-label="Switch between light and dark theme" title="Switch theme">
+        <span aria-hidden="true" id="theme-toggle-icon">◐</span>
+      </button>
+    </nav>
+  </div>
+</header>

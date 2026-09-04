@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p style="margin:0">&copy; {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}</p>
+
+    <nav class="social-links" aria-label="Elsewhere">
+      {%- if site.email %}<a href="mailto:{{ site.email }}">Email</a>{% endif -%}
+      {%- if site.github %}<a href="https://github.com/{{ site.github }}" rel="me">GitHub</a>{% endif -%}
+      {%- if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" rel="me">LinkedIn</a>{% endif -%}
+      {%- if site.bluesky %}<a href="https://bsky.app/profile/{{ site.bluesky }}" rel="me">Bluesky</a>{% endif -%}
+      {%- if site.mastodon %}<a href="{{ site.mastodon }}" rel="me">Mastodon</a>{% endif -%}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </nav>
+  </div>
+</footer>

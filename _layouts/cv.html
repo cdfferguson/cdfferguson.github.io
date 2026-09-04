@@ -1,0 +1,106 @@
+---
+layout: default
+---
+{%- assign cv = site.data.cv -%}
+
+<div class="cv">
+  <h1>{{ page.title | default: "Curriculum Vitae" }}</h1>
+
+  {%- if cv.summary %}
+  <p class="intro__lede" style="max-width:var(--measure)">{{ cv.summary }}</p>
+  {%- endif %}
+
+  <div class="button-row">
+    {%- if cv.pdf %}
+    <a class="button button--primary" href="{{ cv.pdf | relative_url }}">Download PDF</a>
+    {%- endif %}
+    <a class="button" href="mailto:{{ site.email }}">Get in touch</a>
+  </div>
+
+  {%- if cv.experience and cv.experience.size > 0 %}
+  <section class="cv-section">
+    <h2>Experience</h2>
+    {%- for job in cv.experience %}
+    <div class="cv-entry">
+      <div class="cv-entry__head">
+        <h3 class="cv-entry__role">{{ job.role }}</h3>
+        <span class="cv-entry__dates">{{ job.dates }}</span>
+      </div>
+      <p class="cv-entry__org">
+        {%- if job.url %}<a href="{{ job.url }}">{{ job.org }}</a>{% else %}{{ job.org }}{% endif -%}
+        {%- if job.location %} · {{ job.location }}{% endif -%}
+      </p>
+      {%- if job.notes and job.notes.size > 0 %}
+      <ul class="cv-entry__notes">
+        {%- for note in job.notes %}<li>{{ note }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {%- if cv.education and cv.education.size > 0 %}
+  <section class="cv-section">
+    <h2>Education</h2>
+    {%- for item in cv.education %}
+    <div class="cv-entry">
+      <div class="cv-entry__head">
+        <h3 class="cv-entry__role">{{ item.qualification }}</h3>
+        <span class="cv-entry__dates">{{ item.dates }}</span>
+      </div>
+      <p class="cv-entry__org">{{ item.institution }}{% if item.location %} · {{ item.location }}{% endif %}</p>
+      {%- if item.notes and item.notes.size > 0 %}
+      <ul class="cv-entry__notes">
+        {%- for note in item.notes %}<li>{{ note }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {%- if cv.skills and cv.skills.size > 0 %}
+  <section class="cv-section">
+    <h2>Skills</h2>
+    <div class="cv-skills">
+      {%- for group in cv.skills %}
+      <div>
+        <h3>{{ group.name }}</h3>
+        <p>{{ group.items | join: ", " }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if cv.projects and cv.projects.size > 0 %}
+  <section class="cv-section">
+    <h2>Selected projects</h2>
+    {%- for project in cv.projects %}
+    <div class="cv-entry">
+      <div class="cv-entry__head">
+        <h3 class="cv-entry__role">
+          {%- if project.url %}<a href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif -%}
+        </h3>
+        {%- if project.dates %}<span class="cv-entry__dates">{{ project.dates }}</span>{% endif %}
+      </div>
+      {%- if project.description %}<p class="cv-entry__org">{{ project.description }}</p>{% endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+
+  {%- if cv.extras and cv.extras.size > 0 %}
+  {%- for section in cv.extras %}
+  <section class="cv-section">
+    <h2>{{ section.name }}</h2>
+    <ul class="cv-entry__notes" style="padding-left:1.1rem">
+      {%- for item in section.items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+  {%- endif %}
+
+  {{ content }}
+</div>

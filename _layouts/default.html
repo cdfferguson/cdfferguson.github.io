@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  {%- include head.html -%}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  {%- include nav.html -%}
+
+  <main class="site-main" id="main">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+
+  <script>
+    (function () {
+      var button = document.getElementById("theme-toggle");
+      var icon   = document.getElementById("theme-toggle-icon");
+      if (!button) return;
+
+      var root = document.documentElement;
+      var mediaDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+      function current() {
+        return root.getAttribute("data-theme") || (mediaDark.matches ? "dark" : "light");
+      }
+
+      function paintIcon() {
+        icon.textContent = current() === "dark" ? "☀" : "☾";
+      }
+
+      button.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) { /* no storage */ }
+        paintIcon();
+      });
+
+      // Keep the icon honest if the OS theme changes and no explicit
+      // choice has been stored.
+      mediaDark.addEventListener("change", function () {
+        if (!root.getAttribute("data-theme")) paintIcon();
+      });
+
+      paintIcon();
+    })();
+  </script>
+</body>
+</html>

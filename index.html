@@ -1,1 +1,42 @@
-hello world
+---
+layout: default
+description: Personal site of Chris Ferguson — blog, CV, and a short introduction.
+---
+
+<section class="intro">
+  <h1>Hello, I'm Chris Ferguson.</h1>
+  <p class="intro__lede">
+    <!-- TODO: two or three sentences on who you are and what you do.
+         This is the first thing anyone reads, so keep it plain and human. -->
+    A one-paragraph introduction goes here — what you do, what you care about,
+    and what someone landing on this page should know about you.
+  </p>
+
+  <div class="button-row">
+    <a class="button button--primary" href="{{ '/about/' | relative_url }}">More about me</a>
+    <a class="button" href="{{ '/cv/' | relative_url }}">View CV</a>
+  </div>
+</section>
+
+{%- if site.posts.size > 0 %}
+<div class="section-heading">
+  <h2>Recent writing</h2>
+  <a href="{{ '/blog/' | relative_url }}">All posts →</a>
+</div>
+
+<ul class="post-list">
+  {%- for post in site.posts limit: 4 %}
+  <li>
+    <time class="post-list__date" datetime="{{ post.date | date_to_xmlschema }}">
+      {{ post.date | date: "%-d %B %Y" }}
+    </time>
+    <h3 class="post-list__title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+    <p class="post-list__excerpt">
+      {{ post.subtitle | default: post.excerpt | strip_html | truncate: 180 }}
+    </p>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif %}
