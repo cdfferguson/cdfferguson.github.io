@@ -2,28 +2,56 @@
 layout: page
 title: About
 permalink: /about/
-description: Who I am, what I work on, and how to get in touch.
+description: >-
+  Chris Ferguson — partner at Fasken in Toronto, previously Director, Legal
+  and Regulatory at SiriusXM Canada.
 ---
 
-<!-- TODO: replace everything below with your own words.
-     A good "about" page usually covers: what you do now, how you got here,
-     what you care about, and one or two things that are just you. -->
+{% comment %} The structure below follows your career; the specifics are yours to fill
+     in. Anywhere marked TODO is something I couldn't know from a job history.
+     Delete any section that doesn't earn its place. {% endcomment %}
 
-A few paragraphs about who you are. What you do day to day, and what you find
-interesting about it.
+I'm a partner at [Fasken](https://www.fasken.com) in Toronto.
+
+{% comment %} TODO: one paragraph on what you actually do. What kinds of problems land
+     on your desk, who you act for, and what you're good at. This is the
+     paragraph people will quote back to you. {% endcomment %}
+
+## Both sides of the desk
+
+I started out at Fasken as a summer and articling student in the Ottawa
+office, then spent several years in-house — first as associate counsel at
+Manulife Securities, then five years at SiriusXM Canada, where I moved from
+senior legal counsel to Director, Legal and Regulatory.
+
+Going in-house changes how you practise. You stop being the person who hands
+over a memo and start being the person who has to live with it: to find the
+budget, brief the executive, and explain to a colleague in another department
+why the answer is "not quite like that." When I returned to Fasken in 2017 I
+brought that back with me, and it's still the thing that most shapes my
+advice — I know what it's like to receive it.
+
+{% comment %} TODO: this section is inferred from the shape of your history rather than
+     anything you told me. If it doesn't ring true, cut it. {% endcomment %}
 
 ## What I'm working on
 
-A short list or paragraph about current projects, roles, or preoccupations.
-This is the section worth keeping fresh — it's the one people check.
+{% comment %} TODO: current matters, sector developments you're following, committees,
+     writing, speaking. This is the section worth keeping fresh — it's the one
+     people check when they're deciding whether to get in touch. {% endcomment %}
 
-## Background
+## Away from work
 
-How you got here: the shape of your career or study so far, told as a story
-rather than a list. The [CV]({{ '/cv/' | relative_url }}) has the structured
-version.
+{% comment %} TODO: optional, and usually the most-read part of an about page.
+     A couple of sentences on what you do when you're not doing this. {% endcomment %}
 
-## Elsewhere
+## Get in touch
+
+The [CV]({{ '/cv/' | relative_url }}) has the structured version of the above.
+Otherwise:
 
 - **Email** — [{{ site.email }}](mailto:{{ site.email }})
 - **GitHub** — [@{{ site.github }}](https://github.com/{{ site.github }})
+{%- if site.linkedin and site.linkedin != "" %}
+- **LinkedIn** — [{{ site.linkedin }}](https://www.linkedin.com/in/{{ site.linkedin }})
+{%- endif %}

@@ -6,12 +6,12 @@ layout: default
 <div class="cv">
   <h1>{{ page.title | default: "Curriculum Vitae" }}</h1>
 
-  {%- if cv.summary %}
+  {%- if cv.summary and cv.summary != "" %}
   <p class="intro__lede" style="max-width:var(--measure)">{{ cv.summary }}</p>
   {%- endif %}
 
   <div class="button-row">
-    {%- if cv.pdf %}
+    {%- if cv.pdf and cv.pdf != "" %}
     <a class="button button--primary" href="{{ cv.pdf | relative_url }}">Download PDF</a>
     {%- endif %}
     <a class="button" href="mailto:{{ site.email }}">Get in touch</a>
@@ -22,6 +22,39 @@ layout: default
     <h2>Experience</h2>
     {%- for job in cv.experience %}
     <div class="cv-entry">
+
+      {%- comment -%}
+        An entry is either a single role at an organisation, or an
+        organisation with several roles held over time (`roles:`), in which
+        case the org is the heading and each role is listed beneath it.
+      {%- endcomment -%}
+
+      {%- if job.roles and job.roles.size > 0 %}
+      <div class="cv-entry__head">
+        <h3 class="cv-entry__role">
+          {%- if job.url %}<a href="{{ job.url }}">{{ job.org }}</a>{% else %}{{ job.org }}{% endif -%}
+        </h3>
+        <span class="cv-entry__dates">{{ job.dates }}</span>
+      </div>
+      {%- if job.location %}<p class="cv-entry__org">{{ job.location }}</p>{% endif %}
+
+      <ol class="cv-roles">
+        {%- for stint in job.roles %}
+        <li class="cv-role">
+          <div class="cv-entry__head">
+            <h4 class="cv-role__title">{{ stint.role }}</h4>
+            <span class="cv-entry__dates">{{ stint.dates }}</span>
+          </div>
+          {%- if stint.notes and stint.notes.size > 0 %}
+          <ul class="cv-entry__notes">
+            {%- for note in stint.notes %}<li>{{ note }}</li>{% endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+
+      {%- else %}
       <div class="cv-entry__head">
         <h3 class="cv-entry__role">{{ job.role }}</h3>
         <span class="cv-entry__dates">{{ job.dates }}</span>
@@ -35,6 +68,8 @@ layout: default
         {%- for note in job.notes %}<li>{{ note }}</li>{% endfor %}
       </ul>
       {%- endif %}
+      {%- endif %}
+
     </div>
     {%- endfor %}
   </section>

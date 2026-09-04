@@ -2,63 +2,106 @@
 # CV content.  The /cv/ page is rendered from this file, so this is the only
 # place you need to edit.  Delete any section you don't want and it vanishes
 # from the page.
+#
+# An `experience` entry is either a single role:
+#     - role: Job Title
+#       org: Organisation
+#       dates: 2011 — 2012
+# or an organisation where several roles were held over time:
+#     - org: Organisation
+#       dates: 2017 — Present
+#       roles:
+#         - role: Job Title
+#           dates: Jan 2021 — Present
+#
+# Either shape takes an optional `notes:` list of bullet points.
 # ---------------------------------------------------------------------------
 
 summary: >-
-  A two-sentence professional summary: what you do, the kind of problems you
-  work on, and what you're looking for next.
+  Partner at Fasken in Toronto. Before returning to private practice I spent
+  five years in-house at SiriusXM Canada, latterly as Director, Legal and
+  Regulatory — experience that shapes how I advise clients on the problems
+  they actually have.
 
-# Optional: drop a PDF in assets/ and point at it to show a download button.
+# TODO: replace the sentence above if you'd rather lead with your practice
+# area. It's the first thing a prospective client or contact reads.
+
+# Optional: drop a PDF in assets/ and uncomment to show a download button.
 # pdf: /assets/chris-ferguson-cv.pdf
 
 experience:
-  - role: Job Title
-    org: Organisation Name
-    location: City, Country
-    url: https://example.com
-    dates: 2022 — Present
-    notes:
-      - What you were responsible for, stated plainly.
-      - An accomplishment with a concrete outcome attached to it.
-      - A third point, if there's a third point worth making.
+  - org: Fasken
+    location: Toronto, Ontario
+    url: https://www.fasken.com
+    dates: 2017 — Present
+    roles:
+      - role: Partner
+        dates: Jan 2021 — Present
+        # TODO: two or three bullets on your practice — the kinds of matters
+        # you take on, the industries you act for, notable mandates you're
+        # able to name publicly.
+      - role: Associate
+        dates: Oct 2017 — Jan 2021
 
-  - role: Previous Job Title
-    org: Previous Organisation
-    location: City, Country
-    dates: 2019 — 2022
+  - org: SiriusXM Canada
+    location: Toronto, Ontario
+    dates: 2012 — 2017
+    roles:
+      - role: Director, Legal and Regulatory
+        dates: Jan 2017 — Oct 2017
+        # TODO: what the role covered — scope of the function, the regulatory
+        # files you owned, anything you led or built.
+      - role: Senior Legal Counsel
+        dates: Jul 2012 — Jan 2017
+
+  - role: Associate Counsel
+    org: Manulife Securities
+    dates: 2011 — 2012
+    # TODO: a line on the work, if you'd like one here.
+
+  - role: Articling and Summer Student
+    org: Fasken Martineau DuMoulin
+    location: Ottawa, Ontario
+    dates: May 2009 — May 2011
+
+  - role: Research Assistant, Schulich School of Law
+    org: Dalhousie University
+    location: Halifax, Nova Scotia
+    dates: May — Sep 2008
     notes:
-      - What the role involved.
-      - Something you shipped, changed, or improved.
+      - Research on projects in securities law and secured transactions.
 
 education:
-  - qualification: Degree, Subject
-    institution: University Name
-    location: City, Country
-    dates: 2015 — 2019
-    notes:
-      - Thesis, honours, or anything else worth a line.
+  # TODO: confirm the degree, institution and years — these are inferred from
+  # your work history (research assistant at Dalhousie Law in 2008, articling
+  # from 2009) rather than stated, so please correct them.
+  - qualification: Juris Doctor
+    institution: Dalhousie University, Schulich School of Law
+    location: Halifax, Nova Scotia
+    dates: 2006 — 2009
 
-skills:
-  - name: Group one
-    items: [Thing, Another thing, A third thing]
-  - name: Group two
-    items: [Thing, Another thing]
-  - name: Group three
-    items: [Thing, Another thing]
-  - name: Group four
-    items: [Thing, Another thing]
+  # - qualification: Undergraduate degree
+  #   institution: University
+  #   dates: 2002 — 2006
 
-projects:
-  - name: Project name
-    url: https://example.com
-    dates: 2024
-    description: One sentence on what it is and why it mattered.
+# TODO: confirm the year and jurisdiction of your call to the bar.
+extras:
+  - name: Admissions
+    items:
+      - Called to the Bar of Ontario
 
-# Free-form sections — add as many as you like, each becomes its own block.
-# extras:
-#   - name: Speaking
-#     items:
-#       - "Talk title — Conference, 2025"
-#   - name: Certifications
-#     items:
-#       - "Certification name, issuing body, 2024"
+# TODO: replace these groups with your actual practice areas. They're a guess
+# drawn from your history — communications and broadcasting from SiriusXM,
+# securities and financial services from Manulife and Dalhousie — so treat
+# them as a starting point rather than an answer.
+# skills:
+#   - name: Practice areas
+#     items: [Area, Area, Area]
+#   - name: Sectors
+#     items: [Sector, Sector]
+
+# projects:
+#   - name: Project or publication
+#     url: https://example.com
+#     dates: 2025
+#     description: One sentence on what it is.

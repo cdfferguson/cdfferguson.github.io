@@ -427,6 +427,26 @@ th { font-weight: 600; }
 }
 .cv-entry__notes li { margin-bottom: 0.3rem; }
 
+/* An organisation with several roles held over time: the roles hang off a
+   rule running down the left, so the progression reads as one block. */
+.cv-roles {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0 0 0 1rem;
+  border-left: 1px solid var(--rule);
+}
+
+.cv-role + .cv-role { margin-top: 0.9rem; }
+
+.cv-role__title {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cv-roles .cv-entry__notes { margin-top: 0.4rem; }
+
 .cv-skills { display: grid; gap: 1rem; }
 @media (min-width: 34rem) {
   .cv-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; }
@@ -458,6 +478,14 @@ th { font-weight: 600; }
 .site-footer a:hover { color: var(--accent); }
 
 .social-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.site-footer__disclaimer {
+  max-width: var(--measure);
+  margin: 1.1rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
 
 /* --------------------------------------------------------------------------
    Print — makes the CV page produce a clean paper copy

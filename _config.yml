@@ -2,10 +2,18 @@
 # Site identity  —  edit these first
 # ---------------------------------------------------------------------------
 title: Chris Ferguson
-tagline: Writing, work, and things I'm figuring out
+# TODO: the tagline appears beside your name in the homepage title and in
+# search results. Make it sound like you.
+tagline: Lawyer in Toronto
 description: >-
-  Personal site of Chris Ferguson — a blog, a CV, and a short introduction.
+  Personal site of Chris Ferguson, a lawyer in Toronto — writing, a CV,
+  and a short introduction.
 author: Chris Ferguson
+
+# Shown in small type at the foot of every page. Set to "" to remove it.
+disclaimer: >-
+  Views expressed here are my own and not those of my firm or its clients.
+  Nothing on this site is legal advice.
 
 # The canonical address of the site. For a GitHub user site this is
 # https://<username>.github.io with an empty baseurl.
@@ -17,6 +25,7 @@ baseurl: ""
 # ---------------------------------------------------------------------------
 email: chris@cferguson.org
 github: cdfferguson
+# TODO: your LinkedIn vanity slug, e.g. "chris-ferguson-1a2b3c"
 linkedin: ""
 bluesky: ""
 mastodon: ""
