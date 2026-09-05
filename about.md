@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 description: >-
-  Chris Ferguson — partner at Fasken in Toronto, previously Director, Legal
+  Christopher Ferguson — partner at Fasken in Toronto, previously Director, Legal
   and Regulatory at SiriusXM Canada.
 ---
 

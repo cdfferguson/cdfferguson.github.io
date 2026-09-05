@@ -1,14 +1,14 @@
 # ---------------------------------------------------------------------------
 # Site identity  —  edit these first
 # ---------------------------------------------------------------------------
-title: Chris Ferguson
+title: Christopher Ferguson
 # TODO: the tagline appears beside your name in the homepage title and in
 # search results. Make it sound like you.
 tagline: Lawyer in Toronto
 description: >-
-  Personal site of Chris Ferguson, a lawyer in Toronto — writing, a CV,
+  Personal site of Christopher Ferguson, a lawyer in Toronto — writing, a CV,
   and a short introduction.
-author: Chris Ferguson
+author: Christopher Ferguson
 
 # Shown in small type at the foot of every page. Set to "" to remove it.
 disclaimer: >-
@@ -25,7 +25,7 @@ baseurl: ""
 # ---------------------------------------------------------------------------
 email: chris@cferguson.org
 github: cdfferguson
-# TODO: your LinkedIn vanity slug, e.g. "chris-ferguson-1a2b3c"
+# TODO: your LinkedIn vanity slug, e.g. "christopher-ferguson-1a2b3c"
 linkedin: ""
 bluesky: ""
 mastodon: ""
