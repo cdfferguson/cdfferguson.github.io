@@ -34,16 +34,22 @@ advice — I know what it's like to receive it.
 {% comment %} TODO: this section is inferred from the shape of your history rather than
      anything you told me. If it doesn't ring true, cut it. {% endcomment %}
 
+{% comment %}
+Two more sections, ready when you are — uncomment the headings and write
+under them. Left out of the live page for now so it reads as finished
+rather than unfinished.
+
 ## What I'm working on
 
-{% comment %} TODO: current matters, sector developments you're following, committees,
-     writing, speaking. This is the section worth keeping fresh — it's the one
-     people check when they're deciding whether to get in touch. {% endcomment %}
+Current matters, sector developments you're following, committees, writing,
+speaking. Worth keeping fresh — it's the section people check when they're
+deciding whether to get in touch.
 
 ## Away from work
 
-{% comment %} TODO: optional, and usually the most-read part of an about page.
-     A couple of sentences on what you do when you're not doing this. {% endcomment %}
+Optional, and usually the most-read part of an about page. A couple of
+sentences on what you do when you aren't doing this.
+{% endcomment %}
 
 ## Get in touch
 
